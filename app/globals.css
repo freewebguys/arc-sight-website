@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-charcoal: #111111;
+  --color-muted: #666666;
+  --color-soft-gray: #F7F7F7;
+  --color-subtle-gray: #EFF1F5;
+  --color-blue: #2C6BFF;
+  --color-blue-light: #EDF2FF;
+  --color-border: #E4E4E7;
+
+  /* Typography scale */
+  --text-hero: 48px;
+  --text-hero-md: 58px;
+  --text-h2: 32px;
+  --text-h2-md: 36px;
+  --text-h3: 22px;
+  --text-h3-md: 24px;
+  --text-h4: 18px;
+
+  /* Spacing */
+  --space-section-y: 120px;
+  --space-section-y-md: 160px;
+  --pad-sm: 12px;
+  --pad-md: 24px;
+  --pad-lg: 36px;
+  --min-height-screen: 70vh;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Shadow */
+  --shadow-panel: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+:root {
+  /* Structural Rhythm Tokens */
+  --rhythm-compact: calc(var(--space-section-y) * 0.7);   /* Analytical */
+  --rhythm-standard: var(--space-section-y);              /* Narrative */
+  --rhythm-expanded: calc(var(--space-section-y) * 1.25); /* Institutional / Registry */
+  --max-content: 72rem;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    color: var(--color-charcoal);
+    background-color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+  }
+
+  h1 {
+    font-size: var(--text-hero);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: var(--text-h2);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  h3 {
+    font-size: var(--text-h3);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  h4 {
+    font-size: var(--text-h4);
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Scoped paragraph rhythm based on section tone */
+section[data-variant="default"] p + p {
+  margin-top: 0.75rem;
+}
+
+section[data-variant="soft"] p + p {
+  margin-top: 0.65rem;
+}
+
+section[data-variant="muted"] p + p {
+  margin-top: 0.5rem;
+}
+
+.panel-content p + p,
+.metadata-block p + p {
+  margin-top: 0.3rem;
+}
