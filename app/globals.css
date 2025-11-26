@@ -42,6 +42,16 @@
   --rhythm-standard: var(--space-section-y);              /* Narrative */
   --rhythm-expanded: calc(var(--space-section-y) * 1.25); /* Institutional / Registry */
   --max-content: 72rem;
+
+  /* Institutional Brand Tokens */
+  --color-institutional: #1B1F23;
+  --color-evidence: #2C6BFF;
+  --color-governance: #5C6370;
+  --color-registry-bg: #F2F5FA;
+  --color-document-bg: #FFFFFF;
+  --color-metadata-bg: #F8F9FB;
+  --color-stability-safe: #1B5E20;
+  --color-stability-risk: #B00020;
 }
 
 @layer base {

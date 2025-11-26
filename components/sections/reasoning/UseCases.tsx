@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 
 export default function UseCases() {
   return (
-    <Section variant="soft" as="section" id="use-cases">
+    <Section id="use-cases" variant="muted" as="section">
       <SectionTitle>When structural records become necessary</SectionTitle>
 
       <ContainerNarrow>

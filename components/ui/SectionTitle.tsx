@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import clsx from "clsx";
 
 export function SectionTitle({
   id,
@@ -11,11 +12,11 @@ export function SectionTitle({
   return (
     <h2
       id={anchorId}
-      className="text-3xl font-semibold tracking-tight mb-[--pad-lg] scroll-mt-[6rem]"
+      className="text-3xl font-semibold tracking-tight text-[--color-charcoal] mb-[--pad-lg] scroll-mt-[6rem]"
     >
       <a
         href={id ? `#${id}` : undefined}
-        className="no-underline hover:underline"
+        className="no-underline hover:underline decoration-[--color-blue] decoration-2 underline-offset-4"
       >
         {children}
       </a>
@@ -30,7 +31,7 @@ export function SubHeading({
   children: ReactNode;
   className?: string;
 }) {
-  return <h3 className={`mb-2 ${className ?? ""}`}>{children}</h3>;
+  return <h3 className={clsx("mb-[--pad-sm]", className)}>{children}</h3>;
 }
 
 export function MetadataLabel({
@@ -42,7 +43,11 @@ export function MetadataLabel({
 }) {
   return (
     <h4
-      className={`mb-1 font-mono uppercase tracking-wide ${className ?? ""}`}
+      className={clsx(
+        "mb-[--pad-xs] text-[--color-muted] uppercase tracking-[0.15em] text-xs",
+        "px-[--pad-sm] py-[--pad-xs] border border-[--color-border] rounded-[--radius-sm]",
+        className,
+      )}
     >
       {children}
     </h4>

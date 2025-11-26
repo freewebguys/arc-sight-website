@@ -9,7 +9,7 @@ import { H3 } from "@/components/ui/Heading";
 
 export default function ParadigmCards() {
   return (
-    <Section id="paradigm-cards" variant="default" as="section">
+    <Section id="paradigm-cards" variant="muted" as="section">
       <SectionTitle>
         Stability is a temporal property — not a static condition.
       </SectionTitle>

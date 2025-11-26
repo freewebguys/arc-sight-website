@@ -13,7 +13,7 @@ export default function Hero() {
       id="top"
       as="header"
       variant="default"
-      className="min-h-[--min-height-screen] flex items-center pt-[--space-section-y] md:pt-0"
+      className="min-h-[--min-height-screen] flex items-center pt-[--pad-lg] md:pt-0"
     >
       {/* Layout container (Section provides max-width & padding) */}
       <div className="grid md:grid-cols-2 gap-[--pad-lg] w-full">

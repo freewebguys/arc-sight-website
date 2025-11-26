@@ -1,20 +1,20 @@
 import clsx from "clsx";
-import { ElementType } from "react";
+import { ElementType, CSSProperties } from "react";
 
 type SectionVariant = "default" | "muted" | "soft";
 
 type SectionProps<T extends ElementType> = {
   as?: T;
-  id?: string;
   variant?: SectionVariant;
   children: React.ReactNode;
   className?: string;
+  style?: CSSProperties;
 } & React.ComponentPropsWithoutRef<T>;
 
 const rhythmVariants: Record<SectionVariant, string> = {
-  default: "py-[--rhythm-standard]",
-  soft: "py-[--rhythm-expanded]",
-  muted: "py-[--rhythm-compact]",
+  default: "py-[var(--rhythm-standard)]", // Narrative / Discovery
+  soft: "py-[var(--rhythm-expanded)]", // Institutional / Registry / Definition
+  muted: "py-[var(--rhythm-compact)]", // Analytical / Reasoning
 };
 
 const variantClasses: Record<SectionVariant, string> = {
@@ -25,21 +25,19 @@ const variantClasses: Record<SectionVariant, string> = {
 
 export function Section<T extends ElementType = "section">({
   as,
-  id,
   variant = "default",
   children,
   className,
+  style,
   ...props
 }: SectionProps<T>) {
   const Component = as || "section";
 
   return (
     <Component
-      id={id}
       data-variant={variant}
-      role="region"
-      aria-labelledby={id ? `${id}-title` : undefined}
-      style={{ scrollMarginTop: "6rem" }}
+      // 🔑 Scroll offset so sticky header doesn't cover anchors
+      style={{ scrollMarginTop: "6rem", ...(style || {}) }}
       className={clsx(
         rhythmVariants[variant],
         variantClasses[variant],
@@ -47,6 +45,7 @@ export function Section<T extends ElementType = "section">({
       )}
       {...props}
     >
+      {/* 🔑 VALID max-width using CSS var WITH fallback */}
       <div className="w-full max-w-[var(--max-content,72rem)] mx-auto px-6 md:px-10">
         {children}
       </div>

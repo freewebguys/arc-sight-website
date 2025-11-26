@@ -13,7 +13,7 @@ export default function FoundingPartnerInvitation() {
   return (
     <Section
       id="founding-partner"
-      variant="muted"
+      variant="soft"
       as="section"
       role="region"
       aria-labelledby="founding-partner-title"

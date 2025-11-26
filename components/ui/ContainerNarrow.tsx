@@ -7,7 +7,9 @@ export function ContainerNarrow({
   children: React.ReactNode;
   className?: string;
 }) {
-  return <div className={clsx("max-w-3xl mx-auto", className)}>{children}</div>;
+  return (
+    <div className={clsx("max-w-[65ch] mx-auto", className)}>{children}</div>
+  );
 }
 
 

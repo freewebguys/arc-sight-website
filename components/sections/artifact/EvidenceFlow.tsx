@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 
 export default function EvidenceFlow() {
   return (
-    <Section id="evidence-flow" variant="default" as="section">
+    <Section id="evidence-flow" variant="soft" as="section">
       <SectionTitle>
         How structural evidence is captured over time
       </SectionTitle>

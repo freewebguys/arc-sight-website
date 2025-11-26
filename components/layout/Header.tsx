@@ -18,7 +18,7 @@ export default function Header() {
                  backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm"
       role="banner"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+      <div className="w-full max-w-[var(--max-content,72rem)] mx-auto px-6 md:px-10 py-[--pad-md] flex items-center justify-between">
         {/* Brand — now semantically an Organization */}
         <a
           href="#top"

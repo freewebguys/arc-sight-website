@@ -13,7 +13,7 @@ export default function PartnerApplication() {
   return (
     <Section
       id="partner-application"
-      variant="default"
+      variant="soft"
       as="section"
       role="form"
       aria-labelledby="partner-application-title"
